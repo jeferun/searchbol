@@ -26,4 +26,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - NGRX
 
 
-![Captura](https://github.com/jeferun/searchbol/blob/master/screen-searchbol.png?raw=true)
+![Captura](https://github.com/jeferun/searchbol/blob/main/screen-searchbol.png?raw=true)
