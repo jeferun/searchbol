@@ -1,4 +1,6 @@
-.container
+@import 'colors'
+
+.container-image
   position: relative
   color: white
   font-size: 14px
@@ -9,12 +11,16 @@
     font-size: 14px
 
 .top-left
+  background-color: $light_grey
   display: flex
   justify-content: center
   align-items: center
   position: absolute
-  bottom: 36px
-  right: 16px
+  bottom: 8px
+  right: 8px
   .bi-star-fill
     height: 18px
     width: 18px
+
+.badge:first-letter
+  text-transform: uppercase

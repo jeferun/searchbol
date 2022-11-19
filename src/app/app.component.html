@@ -3,6 +3,7 @@
   <app-search (selectedParams)="searchImages($event)" [categoriesData]="categories" ></app-search>
   <app-spinner *ngIf="loading"></app-spinner>
   <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-5 row-cols-md-3 g-2 border bg-light p-2 mt-2">
+    <caption *ngIf="!imageList.length && !loading">No se encontraron resultados</caption>
     <div class="col" *ngFor="let image of imageList">
       <app-card [imageInfo]="image" (click)="setImageInfo(image)"></app-card>
     </div>
