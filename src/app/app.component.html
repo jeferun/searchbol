@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <app-search (selectedParams)="searchImages($event)"></app-search>
+  <app-spinner *ngIf="loading"></app-spinner>
+  <div class="row row-cols-4 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let image of imageList">
+      <app-card [imageInfo]="image"></app-card>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
