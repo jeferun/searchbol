@@ -7,5 +7,6 @@ interface Image {
   views: number;
   likes: number;
   webformatURL: string;
+  largeImageURL: string;
   imageSize: number;
 }

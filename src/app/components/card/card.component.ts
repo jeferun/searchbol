@@ -6,8 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.sass']
 })
 export class CardComponent {
-
   @Input() imageInfo: Image | Obj = {};
   constructor() {}
-
 }

@@ -12,13 +12,15 @@
             name="searchText"
           />
           <select
+            *ngIf="categoriesData.length"
             class="form-select"
             aria-label="select-category"
             name="category"
-            [(ngModel)]="selectedCategory"
+            [(ngModel)]="handleSelected"
+            (ngModelChange)="setParams()"
           >
             <option
-              *ngFor="let category of categories"
+              *ngFor="let category of categoriesData"
               [value]="category.value"
             >
               {{ category.label }}

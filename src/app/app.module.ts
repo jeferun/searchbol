@@ -8,6 +8,10 @@ import { SearchComponent } from './components/search/search.component';
 import { CardComponent } from './components/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ROOT_REDUCERS } from './store/app.state';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,15 @@ import { FooterComponent } from './components/footer/footer.component';
     SearchComponent,
     CardComponent,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ name: 'text'})
   ],
   providers: [],
   bootstrap: [AppComponent]

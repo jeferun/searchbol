@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CONSTANTS } from 'src/app/utils/constants';
 
 @Component({
@@ -8,24 +8,15 @@ import { CONSTANTS } from 'src/app/utils/constants';
 })
 export class SearchComponent {
   @Output() selectedParams = new EventEmitter<Params>();
-  selectedCategory: string = CONSTANTS.SELECTED_CATEGORY;
+  handleSelected: string = CONSTANTS.SELECTED_CATEGORY;
+  @Input() categoriesData: CategorySelect[] = [];
   text: string = '';
-
-  categories: CategorySelect[] = [
-    {value: 'all', label: 'Todas las categorias'},
-    {value: 'people', label: 'Gente'},
-    {value: 'science', label: 'Ciencia'},
-    {value: 'education', label: 'Educación'},
-    {value: 'feelings', label: 'Sentimientos'},
-    {value: 'computer', label: 'Computadora'},
-    {value: 'buildings', label: 'Edificios'},
-  ];
 
   constructor() {}
 
   setParams() {
     const params = {
-      category: this.selectedCategory,
+      category: this.handleSelected,
       text: this.text,
     }
     
